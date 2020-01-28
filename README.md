@@ -1,9 +1,14 @@
-# README
+shopping-cart
+===
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Application for grocery list generation built on what recipes you are
+trying to make.
+A tutorial application built in Grinnell's CS324 class. 
+Mostly an exercise in learning Rails.
 
-Things you may want to cover:
+
+
+TODO Things to add to the README
 
 * Ruby version
 
