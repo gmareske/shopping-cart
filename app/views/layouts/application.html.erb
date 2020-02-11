@@ -11,19 +11,21 @@
   </head>
 
   <body>
-    <div class="nav">
-      <ul>
-        <%= link_to "home" do %>
-        <span class="home_link">Home</span>
-        <% end %>
-        <%= link_to "about" do %>
-        <span class="about_link">About</span>
-        <% end %>
-        <%= link_to "help" do %>
-        <span class="help_link">Help</span>
-        <% end %>
-      </ul>
+    <header class="navbar navbar-fixed-top">
+      <div class="navbar-innter">
+        <div class="container">
+          <nav>
+            <ul class="nav pull-right">
+              <li><%= link_to "Home" , home_path%></li>
+              <li><%= link_to "About", about_path %></li>
+              <li><%= link_to "Help", help_path %></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <%= yield %>
     </div>
-    <%= yield %>
   </body>
 </html>
