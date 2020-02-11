@@ -11,6 +11,19 @@
   </head>
 
   <body>
+    <div class="nav">
+      <ul>
+        <%= link_to "home" do %>
+        <span class="home_link">Home</span>
+        <% end %>
+        <%= link_to "about" do %>
+        <span class="about_link">About</span>
+        <% end %>
+        <%= link_to "help" do %>
+        <span class="help_link">Help</span>
+        <% end %>
+      </ul>
+    </div>
     <%= yield %>
   </body>
 </html>
