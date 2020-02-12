@@ -4,7 +4,8 @@
   <% @random_list.each do |i| %>
   <li class="list-group-item">
     <div class="container">
-    <p><span class="ingredient-name"><%= i %></span>  x <u><span class="ingredient_number">1</span></u></p>
+    <p><span class="ingredient-name"><%= i.capitalize %></span>
+    x <u><span class="ingredient_number"><%= rand(1..10)%></span></u></p>
     <button class="btn-small btn-danger">Remove</button>
     </div>
   </li>

@@ -23,7 +23,5 @@ class StaticPagesController < ApplicationController
     @random_list  = possible_ingredients.shuffle
       .take(rand(possible_ingredients.length))
     render 'list'
-            
   end
-  
 end
