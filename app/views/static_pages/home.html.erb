@@ -1,14 +1,11 @@
 <% provide(:title, 'Home') %>
 <h1>Shopping Cart</h1>
-<ul class="list-group">
-  <li class="list-group-item">Recipe 1</li>
-  <li class="list-group-item">Recipe 2</li>
-  <li class="list-group-item">Recipe 3</li>
-  <li class="list-group-item">Recipe 4</li>
-  <li class="list-group-item">Recipe 5</li>
-</ul>
-<button class="btn-primary">Test</button>
-<button class="btn-warning">Test 2</button>
+<button class="btn btn-primary">Test Primary</button>
+<button class="btn btn-warning">Test Warning</button>
+<button class="btn btn-info">Test Info</button>
+<button class="btn btn-success">Test Success</button>
+<button class="btn btn-danger">Test Danger</button>
 <p>Find me in app/views/static_pages/home.html.erb</p>
 <p>Homepage for the shopping cart application!</p>
+<p>Need something to eat? Try <%= link_to "shopping with Chaos!", random_list_path%></p>
 
