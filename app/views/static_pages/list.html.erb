@@ -1,0 +1,12 @@
+<h1>Random Shopping List</h1>
+<p class="text-muted">Not sure what to eat? Me neither. Try combining these ingredients:</p>
+<ul class="list-group">
+  <% @random_list.each do |i| %>
+  <li class="list-group-item">
+    <div class="container">
+    <p><span class="ingredient-name"><%= i %></span>  x <u><span class="ingredient_number">1</span></u></p>
+    <button class="btn-small btn-danger">Remove</button>
+    </div>
+  </li>
+  <% end %>
+</ul>
