@@ -1,9 +1,14 @@
+
+@import '_theme_variables';
 @import 'bootstrap';
+
 
 html {
     overflow-y: scroll;
 }
-
+body {
+    background-color: $light-shade;
+}
 h1, h2, h3, h4, h5, h6 {
     line-height: 1;
 }
