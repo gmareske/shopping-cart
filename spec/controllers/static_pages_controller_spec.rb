@@ -34,10 +34,17 @@ RSpec.describe StaticPagesController do
       assigns(:random_list).should_not be_nil
     end
 
+    it "should generate a different list every time" do
+      get 'random_shopping_list'
+      old_arr = Array.new assigns(:random_list)
+      # get the page again
+      get'random_shopping_list'
+      assigns(:random_list).should_not eq(old_arr)
+    end
+
     it "Should render the random_shopping_list template" do
       get 'random_shopping_list'
       response.should render_template 'list'
     end
   end
-  
 end
