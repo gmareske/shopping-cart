@@ -1,0 +1,20 @@
+<% provide(:title, 'All Recipes') %>
+<h1>Recipes</h1>
+<p>A list of all recipes tracked by the system.</p>
+<ul class="list-group">
+  <% @recipes.each do |r| %>
+  <li class="list-group-item">
+    <div class="container">
+      <span class="recipe-title"><%= r.title.capitalize %></span>
+      <%= link_to r do %>
+      <button class='btn btn-info float-right'>View</button>"
+      <% end %>
+      <button class="btn btn-success float-right">Add</button>
+      <!-- <p><span class="recipe-ingredient"></span> -->
+      <!--   <span class="recipe-amount"></span> -->
+      <!-- </p> -->
+    </div>
+  </li>
+  <% end %>
+  
+</ul>
