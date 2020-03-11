@@ -5,11 +5,15 @@
   <% @recipes.each do |r| %>
   <li class="list-group-item">
     <div class="container">
-      <span class="recipe-title"><%= r.title.capitalize %></span>
+      <div class="col-sm-8">
+        <span class="recipe-title"><%= r.title.capitalize %></span>
+      </div>
+      <div class="col-sm-4">
       <%= link_to r do %>
-      <button class='btn btn-info float-right'>View</button>"
+      <button class='btn btn-info'>View</button>
       <% end %>
-      <button class="btn btn-success float-right">Add</button>
+      <button class="btn btn-success">Add</button>
+      </div>
       <!-- <p><span class="recipe-ingredient"></span> -->
       <!--   <span class="recipe-amount"></span> -->
       <!-- </p> -->
