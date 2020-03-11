@@ -1,9 +1,12 @@
 <% provide(:title, 'View Recipe') %>
 <div class="container">
   <h1 class="float-right"><%= @recipe.title %></h1>
+  <h3>Author: <%= @user.name %></h3>
   <%= link_to :recipes do %>
   <button class="btn btn-warning">Back</button>
   <% end %>
+  <h3>Instructions:</h3>
+  <p><%= @recipe.text %></p>
 </div>
 <ul class="list-group">
   <% @measurements.each do |m| %>
