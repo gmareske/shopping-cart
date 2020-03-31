@@ -1,0 +1,13 @@
+<% provide(:title, 'New Recipe') %>
+<div class="container">
+  <h1>New Recipe</h1>
+  <%= form_for(@recipe) do |f| %>
+
+  <% f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= select(:recipe, :user_id, @user_options) %>
+
+  <%= f.submit "Create recipe", class: "btn btn-large btn-primary" %>
+  <% end %>
+</div>

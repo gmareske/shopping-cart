@@ -19,6 +19,19 @@ class RecipesController < ApplicationController
   end
   
   def new
+    @user_options = User.all.map{ |u| [u.name, u.id]}
+    @recipe = Recipe.new
   end
 
+  def create
+    puts params[:recipe]
+    @recipe = Recipe.new(params[:recipe].permit(:title,:user_id))
+    if @recipe.save
+      # successful
+      redirect_to action: 'index'
+    else
+      redirect_to action: 'new'
+    end
+  end
+  
 end
