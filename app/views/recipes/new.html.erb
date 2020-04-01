@@ -17,6 +17,9 @@
   </div>
   <div class="container">
     <h4>Ingredients</h4>
+    <%= submit_tag "Add ingredient", :type => 'button', :id=>'add_ingredient', :onclick => 'add_ingredient_field()' %>
+    <ul id="ingredient_inputs" class="list-group">
+    </ul>
   </div>
   <div class="container">
   <%= f.submit "Create recipe", class: "btn btn-large btn-primary" %>
