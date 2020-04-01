@@ -25,7 +25,7 @@ class RecipesController < ApplicationController
 
   def create
     puts params[:recipe]
-    @recipe = Recipe.new(params[:recipe].permit(:title,:user_id))
+    @recipe = Recipe.new(params[:recipe].permit(:title,:user_id,:text))
     if @recipe.save
       # successful
       redirect_to action: 'index'
@@ -33,5 +33,4 @@ class RecipesController < ApplicationController
       redirect_to action: 'new'
     end
   end
-  
 end

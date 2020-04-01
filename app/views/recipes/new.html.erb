@@ -2,12 +2,24 @@
 <div class="container">
   <h1>New Recipe</h1>
   <%= form_for(@recipe) do |f| %>
-
+  <div class="container">
+  <h4>Title</h4>
   <% f.label :title %>
   <%= f.text_field :title %>
 
   <%= select(:recipe, :user_id, @user_options) %>
 
+  </div>
+  <div class="container">
+    <h4>Instructions</h4>
+    <% f.label :text %>
+    <%=f.text_area :text, size: "30x4"%>
+  </div>
+  <div class="container">
+    <h4>Ingredients</h4>
+  </div>
+  <div class="container">
   <%= f.submit "Create recipe", class: "btn btn-large btn-primary" %>
   <% end %>
+  </div>
 </div>
