@@ -24,8 +24,22 @@ class RecipesController < ApplicationController
   end
 
   def create
-    puts params[:recipe]
     @recipe = Recipe.new(params[:recipe].permit(:title,:user_id,:text))
+
+    ingredient_data = params.require(:recipe).permit(ingredient_names: {}, ingredient_quantities: {})
+    ingredients_input = {}
+
+    ingredient_data[:ingredient_names].each do |nk,nv|
+      ingredients_input[nk] = nv
+    end
+
+    ingredient_data[:ingredient_quantities].each do |qk,qv|
+      ingredients_input[qk] = ingredients_input[qk].merge(qv).to_hash
+    end
+
+    puts ingredients_input
+
+    
     if @recipe.save
       # successful
       redirect_to action: 'index'
