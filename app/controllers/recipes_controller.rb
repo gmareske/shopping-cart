@@ -32,13 +32,25 @@ class RecipesController < ApplicationController
     ingredient_data[:ingredient_names].each do |nk,nv|
       ingredients_input[nk] = nv
     end
-
     ingredient_data[:ingredient_quantities].each do |qk,qv|
       ingredients_input[qk] = ingredients_input[qk].merge(qv).to_hash
     end
 
     puts ingredients_input
-
+    
+    ingredients_input.each do |k,data|
+      puts data
+      i_name = data["name"].strip.downcase
+      if Ingredient.find_by name: i_name
+        i = Ingredient.find_by name: i_name
+      else
+        i = Ingredient.create name: i_name
+      end
+      m = Measurement.create(amount: data["quantity"].strip.downcase)
+      m.ingredient = i
+      m.recipe = @recipe
+      m.save
+    end
     
     if @recipe.save
       # successful
@@ -46,5 +58,6 @@ class RecipesController < ApplicationController
     else
       redirect_to action: 'new'
     end
+
   end
 end
