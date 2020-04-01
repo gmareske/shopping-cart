@@ -1,6 +1,11 @@
 <% provide(:title, 'All Recipes') %>
-<h1>Recipes</h1>
-<p>A list of all recipes tracked by the system.</p>
+<div class="container">
+<h1 class="col-sm-12">Recipes</h1>
+<p class="col-sm-8">A list of all recipes tracked by the system.</p>
+<%= link_to action: "new" do %>
+<button class="col-sm-3 btn btn-primary">New Recipe</button>
+<% end %>
+</div>
 <ul class="list-group">
   <% @recipes.each do |r| %>
   <li class="list-group-item">
