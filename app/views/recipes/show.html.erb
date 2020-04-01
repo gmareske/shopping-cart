@@ -6,8 +6,10 @@
   <button class="btn btn-warning">Back</button>
   <% end %>
   <h3>Instructions:</h3>
-  <p><%= @recipe.text %></p>
+  <blockquote><%= @recipe.text %></blockquote>
 </div>
+<div class="container">
+  <h3>Ingredients:</h3>
 <ul class="list-group">
   <% @measurements.each do |m| %>
   <li class="list-group-item">
@@ -26,3 +28,4 @@
   <% end %>
   
 </ul>
+</div>
