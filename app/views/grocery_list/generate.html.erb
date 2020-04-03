@@ -1,0 +1,9 @@
+<h1>GroceryList#generate</h1>
+<p>Find me in app/views/grocery_list/generate.html.erb</p>
+<ul class="list-group">
+<%= @measurements.each do |m| %>
+<li class="list-group-item">
+  <p><%= m.ingredient.name %> X <%= m.amount %></p>
+</li>
+<% end %>
+</ul>
