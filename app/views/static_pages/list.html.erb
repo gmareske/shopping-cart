@@ -2,11 +2,11 @@
 <h1>Random Shopping List</h1>
 <p class="text-muted">Not sure what to eat? Me neither. Try combining these ingredients:</p>
 <ul class="list-group">
-  <% @random_list.each do |i| %>
+  <% @random_list.zip(@measurement_list).each do |i,m| %>
   <li class="list-group-item">
     <div class="container">
     <p><span class="ingredient-name"><%= i.capitalize %></span>
-    x <u><span class="ingredient_number"><%= rand(1..10)%></span></u></p>
+    x <u><span class="ingredient_number"><%= m%></span></u></p>
     <button class="btn-small btn-danger">Remove</button>
     </div>
   </li>
