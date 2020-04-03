@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'grocery_list/show'
+  get 'grocery_list/generate'
+  get 'grocery_list/show'
+  post 'grocery_list', to: 'grocery_list#generate'
   root 'recipes#index'
   get 'static_pages/home', as: 'home'
   get 'static_pages/help', as: 'help'
