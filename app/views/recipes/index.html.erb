@@ -1,10 +1,12 @@
 <% provide(:title, 'All Recipes') %>
+<%= form_tag 'grocery_list' do %>
 <div class="container">
-<h1 class="col-sm-12">Recipes</h1>
-<p class="col-sm-8">A list of all recipes tracked by the system.</p>
-<%= link_to action: "new" do %>
-<button class="col-sm-3 btn btn-primary">New Recipe</button>
-<% end %>
+  <h1 class="col-sm-12">Recipes</h1>
+  <p class="col-sm-6">A list of all recipes tracked by the system.</p>
+  <%= link_to action: "new" do %>
+  <button class="col-sm-3 btn btn-primary">New Recipe</button>
+  <% end %>
+  <%= button_tag 'Create List', class: 'col-sm-3 btn btn-success' %>
 </div>
 <ul class="list-group">
   <% @recipes.each do |r| %>
@@ -14,16 +16,18 @@
         <span class="recipe-title"><%= r.title.capitalize %></span>
       </div>
       <div class="col-sm-4">
-      <%= link_to r do %>
-      <button class='btn btn-info'>View</button>
-      <% end %>
-      <button class="btn btn-success">Add</button>
+        <%= link_to r do %>
+        <button class='btn btn-info'>View</button>
+        <% end %>
+        <span class="add-recipe-text">Add Recipe</span>
+        <%= check_box_tag "recipe_list[#{r.id}][]", "1", false, class: 'add-recipe-checkbox' %>
       </div>
       <!-- <p><span class="recipe-ingredient"></span> -->
-      <!--   <span class="recipe-amount"></span> -->
-      <!-- </p> -->
+        <!--   <span class="recipe-amount"></span> -->
+        <!-- </p> -->
     </div>
   </li>
   <% end %>
   
 </ul>
+<% end %>
