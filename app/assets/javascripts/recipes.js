@@ -9,6 +9,10 @@ const add_ingredient_field = function () {
     let li = document.createElement("li");
     li.classList.add("list-group-item");
     
+    let name_text = document.createElement("span");
+    name_text.innerHTML = "Name:";
+    li.appendChild(name_text);
+
     let name_label = document.createElement("label");
     name_label.setAttribute("for",field_name);
     li.appendChild(name_label);
@@ -18,6 +22,10 @@ const add_ingredient_field = function () {
     name_input.setAttribute("id",field_name_id);
     name_input.setAttribute("name",field_name);
     li.appendChild(name_input);
+
+    let quantity_text = document.createElement("span");
+    quantity_text.innerHTML = "Quantity:";
+    li.appendChild(quantity_text);
 
     let quantity_label = document.createElement("label");
     quantity_label.setAttribute("for",field_quantity);
