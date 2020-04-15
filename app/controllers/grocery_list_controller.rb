@@ -5,8 +5,11 @@ class GroceryListController < ApplicationController
 
   def generate
     params.permit(recipe_list: [])
-    recipe_ids = params[:recipe_list].keys.map {|k| k.to_i }
-    @measurements = recipe_ids.collect {|id| Measurement.where(recipe_id: id)}.flatten
-    
+    if params[:recipe_list]
+        recipe_ids = params[:recipe_list].keys.map {|k| k.to_i }
+        @measurements = recipe_ids.collect {|id| Measurement.where(recipe_id: id)}.flatten
+    else
+      redirect_to '/recipes'
+    end
   end
 end
