@@ -1,7 +1,6 @@
 <h3>Here's your grocery list</h3>
-
 <ul class="list-group">
-<%= @measurements.each do |m| %>
+<% @measurements.each do |m| %>
 <li class="list-group-item">
   <p><%= m.ingredient.name %> X <%= m.amount %></p>
 </li>
