@@ -1,7 +1,7 @@
 shopping-cart
 ===
 
-Application for grocery list generation built on what recipes you are
+Application for grocery list generation based off the recipes that you are
 trying to make.
 A tutorial application built in Grinnell's CS324 class. 
 Mostly an exercise in learning Rails.
