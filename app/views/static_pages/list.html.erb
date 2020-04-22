@@ -1,14 +1,9 @@
 <% provide(:title, 'Random List') %>
 <h1>Random Shopping List</h1>
-<p class="text-muted">Not sure what to eat? Me neither. Try combining these ingredients:</p>
-<ul class="list-group">
-  <% @random_list.zip(@measurement_list).each do |i,m| %>
-  <li class="list-group-item">
-    <div class="container">
-    <p><span class="ingredient-name"><%= i.capitalize %></span>
-    x <u><span class="ingredient_number"><%= m%></span></u></p>
-    <button class="btn-small btn-danger">Remove</button>
-    </div>
-  </li>
-  <% end %>
-</ul>
+<p class="text-muted">Not sure what to eat? Me neither. Try combining these
+  ingredients:</p>
+<div class="container">
+  <div class="col-lg-6 col-md-6">
+    <%= render 'layouts/measurement_list' %>
+  </div>
+</div>
