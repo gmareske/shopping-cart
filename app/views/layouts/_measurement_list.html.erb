@@ -1,0 +1,17 @@
+<ul class="list-group">
+  <% @measurements.each do |m| %>
+  <li class="list-group-item">
+    <div class="container">
+      <p>
+        <span class="ingredient-name"><%= m.ingredient.name.capitalize %></span>
+      </p>
+      <p>
+        <span class="ingredient-amount"><%= m.amount %></span>
+      </p>
+      <!-- <p><span class="recipe-ingredient"></span> -->
+      <!--   <span class="recipe-amount"></span> -->
+      <!-- </p> -->
+    </div>
+  </li>
+  <% end %>
+</ul>
