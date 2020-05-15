@@ -2,11 +2,13 @@
 <%= form_tag 'grocery_list' do %>
 <div class="container">
   <h1 class="col-sm-12">Recipes</h1>
-  <p class="col-sm-6">A list of all recipes tracked by the system.</p>
+  <p class="col-sm-6">A list of all recipes tracked by the system. To
+  create a new list, check some recipes you'd like to make then click
+  'Create List'.</p>
   <%= link_to action: "new" do %>
   <button class="col-sm-3 btn btn-primary">New Recipe</button>
   <% end %>
-  <%= button_tag 'Create List', class: 'col-sm-3 btn btn-success' %>
+  <%= button_tag 'Create List', id: 'create-list-btn', class: 'col-sm-3 btn btn-success' %>
 </div>
 <ul class="list-group">
   <% @recipes.each do |r| %>

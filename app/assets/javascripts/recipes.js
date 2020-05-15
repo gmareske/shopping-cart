@@ -1,3 +1,7 @@
+const toggleRecipeButton = function() {
+    
+};
+
 const add_ingredient_field = function () {
     const date = new Date();
     const sec = date.getTime();
